@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,16 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type seemp_service,               service_manager_type;
-type dpmservice,                  service_manager_type;
-type MinkBinderSvc,               app_api_service, service_manager_type;
-type vendor_perf_service,         app_api_service, service_manager_type;
-type vendor_qdt_service,          app_api_service, service_manager_type;
-type izat_service,                app_api_service, system_api_service, service_manager_type;
-type color_service,               service_manager_type;
-type wfdservice_service,          service_manager_type;
-type wigigp2p_service,            app_api_service, system_server_service, service_manager_type;
-type wigig_service,               app_api_service, system_server_service, service_manager_type;
-type vendor_vps_service,          app_api_service, service_manager_type;
-type qspmsvc_service,             app_api_service, service_manager_type;
-type qcai_service,                service_manager_type;
+# trinket/location_app.te - sepolicy rules for qti value added location apps
+# rules specific to trinket target
+
+# Allow location app domain to perform binder IPC to gpuservice server domain.
+binder_call(location_app, gpuservice);
