@@ -38,6 +38,7 @@ hal_client_domain(system_app, hal_sensorscalibrate_qti);
 
 #perf
 hal_client_domain(system_app, hal_perf)
+get_prop(system_app, vendor_mpctl_prop);
 
 #allow system_app to interact with soter hal
 hal_client_domain(system_app, hal_soter);
